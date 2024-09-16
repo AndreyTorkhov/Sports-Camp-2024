@@ -1,5 +1,7 @@
-import { useState, KeyboardEvent } from "react";
+// NewCommentForm.tsx
+import React, { useState, KeyboardEvent } from "react";
 import { Comment } from "../../interfaces/comment";
+import { handleCommentSubmit } from "../../services/handleCommentSubmit";
 import styles from "./NewCommentForm.module.scss";
 
 interface NewCommentFormProps {
@@ -9,21 +11,8 @@ interface NewCommentFormProps {
 const NewCommentForm: React.FC<NewCommentFormProps> = ({ onAddComment }) => {
   const [commentText, setCommentText] = useState("");
 
-  // Обработка нажатия клавиш
   const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter") {
-      if (commentText.trim()) {
-        onAddComment({
-          id: Date.now().toString(), // Генерация уникального ID для нового комментария
-          text: commentText.trim(),
-          author: { nick: "user" }, // Пример данных пользователя
-          published: { bunin: new Date().toISOString() },
-          rating: { plus: 0, minus: 0 },
-          replies: [], // Изначально нет ответов
-        });
-        setCommentText(""); // Очистка поля ввода
-      }
-    }
+    handleCommentSubmit(event, commentText, onAddComment, setCommentText);
   };
 
   return (

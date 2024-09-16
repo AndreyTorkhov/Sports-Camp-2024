@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../store/store";
 import NewCommentForm from "../../components/NewCommentForm";
-import CommentList from "../../components/CommentList"; // Обновили импорт
+import CommentList from "../../components/CommentList";
 import {
   getCommentsFromLocalStorage,
   saveCommentsToLocalStorage,
-} from "../../services/imageService";
+} from "../../services/newCommentsStore";
 import { fetchComments } from "../../utils/network";
 import { Comment } from "../../interfaces/comment";
 import styles from "./CommentPage.module.scss";
@@ -18,13 +18,11 @@ const CommentPage: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    // Загружаем комментарии из localStorage
     const storedComments = getCommentsFromLocalStorage();
     if (storedComments.length > 0) {
       setLocalComments(storedComments);
     }
 
-    // Загружаем комментарии с API
     const loadCommentsFromApi = async () => {
       try {
         const resultAction = await dispatch(fetchComments());
