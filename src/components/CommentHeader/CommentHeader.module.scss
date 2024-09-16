@@ -1,0 +1,22 @@
+.commentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+}
+
+.moreButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px;
+  &:hover {
+    background: #f4f4f4;
+  }
+  border-radius: 4px;
+}

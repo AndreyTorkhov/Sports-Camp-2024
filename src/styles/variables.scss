@@ -4,6 +4,19 @@ $color-light: #ffffff;
 $color-positive: #4caf50;
 $color-negative: #f44336;
 
+$background-color: #ffffff;
+
+$header-background: #f9f9f9;
+$header-height: 96px;
+$header-font-size: 28px;
+$header-font-weight: bold;
+
+$text-color: #000000;
+$font-family: "Cera Pro", sans-serif;
+
+$padding-vertical: 24px;
+$padding-horizontal: 80px;
+
 $font-size-small: 12px;
 
 $padding-small: 10px;
@@ -12,3 +25,27 @@ $margin-medium: 16px;
 
 $border-radius-small: 4px;
 $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+/* variables.module.scss */
+
+/* Цвета */
+$background-color-default: #f4f4f4;
+$background-color-hover: #eaeaea;
+$button-color-default: #9b9b9b;
+$button-color-active: #00a876;
+$button-text-color: #fff;
+$placeholder-color: #505050;
+
+/* Шрифты и размеры */
+$font-size: 16px;
+$font-family: "Cera Pro", sans-serif;
+$border-radius: 16px;
+$padding: 16px;
+$icon-size: 24px;
+$button-padding-vertical: 8px;
+$button-padding-horizontal: 16px;
+
+/* Отступы */
+$horizontal-padding: 80px;
+$icon-spacing: 4px;
+$right-icon-margin: 6px;

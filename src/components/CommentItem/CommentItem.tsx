@@ -33,7 +33,14 @@ const CommentItem: React.FC<CommentItemProps> = ({
 
   return (
     <div className={styles.commentCard} ref={commentRef}>
-      <CommentHeader author={comment.author} date={comment.published.bunin} />
+      <CommentHeader
+        author={comment.author}
+        date={
+          !comment.published.bunin.includes("/")
+            ? comment.published.bunin
+            : comment.published.bunin
+        }
+      />
       {comment.parentComment && (
         <div className={styles.replyTo} onClick={handleScrollToParentComment}>
           Ответ на комментарий: "{comment.parentComment.text?.substring(0, 30)}

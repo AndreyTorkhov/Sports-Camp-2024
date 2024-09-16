@@ -1,11 +1,12 @@
-@import "../../styles/variables.scss";
-
 .commentCard {
-  border: 1px solid #ccc;
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 8px;
+  margin: 16px 0;
   padding: 16px;
-  margin-bottom: 16px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .commentHeader {
@@ -13,52 +14,24 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
-}
-
-.userInfo {
-  display: flex;
-  align-items: center;
-}
-
-.userPicture {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 8px;
-}
-
-.userName {
   font-weight: bold;
+  color: #333;
 }
 
-.commentDate {
-  color: #666;
-  font-size: 0.875rem;
+.commentHeader .author {
+  font-size: 16px;
 }
 
-.moreButton {
-  background: none;
-  border: none;
-  font-size: 1.25rem;
-  cursor: pointer;
+.commentHeader .date {
+  font-size: 14px;
+  color: #7f7f7f;
 }
 
 .replyTo {
-  cursor: pointer;
-  font-style: italic;
-  margin-bottom: 8px;
-}
-
-.replyButton {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  margin-top: 8px;
-  cursor: pointer;
-  border-radius: 4px;
   font-size: 14px;
-  transition: background-color 0.3s ease;
+  color: #006496;
+  cursor: pointer;
+  margin-bottom: 8px;
 }
 
 .commentBody {
@@ -66,30 +39,54 @@
 }
 
 .commentText {
-  font-size: 1rem;
+  font-size: 16px;
+  color: #333;
+  margin: 0;
 }
 
 .commentFooter {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid #ddd;
+}
+
+.replyButton {
+  background-color: #f4f4f4;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #eaeaea;
+  }
 }
 
 .ratingButtons {
   display: flex;
-  align-items: center;
+  gap: 8px;
 }
 
 .ratingButton {
-  background: none;
+  background-color: #e0e0e0;
   border: none;
-  font-size: 1.25rem;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  margin: 0 4px;
-}
 
-.ratingResult {
-  margin: 0 8px;
-  font-weight: bold;
+  &.positive {
+    background-color: #00a876;
+  }
+
+  &.negative {
+    background-color: #ff4d4d;
+  }
 }

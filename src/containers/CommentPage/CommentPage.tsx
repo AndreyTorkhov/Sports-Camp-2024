@@ -19,6 +19,7 @@ const CommentPage: React.FC = () => {
 
   useEffect(() => {
     const storedComments = getCommentsFromLocalStorage();
+
     if (storedComments.length > 0) {
       setLocalComments(storedComments);
     }
@@ -44,7 +45,7 @@ const CommentPage: React.FC = () => {
     };
 
     loadCommentsFromApi();
-  }, [dispatch]);
+  }, []);
 
   const handleAddComment = (newComment: Comment) => {
     const updatedComments = [newComment, ...localComments];
@@ -54,10 +55,12 @@ const CommentPage: React.FC = () => {
 
   return (
     <div className={styles.commentPage}>
-      <h1>Комментарии</h1>
-
-      <NewCommentForm onAddComment={handleAddComment} />
-
+      <div className={styles.headerWrapper}>
+        <h1>Comment</h1>
+      </div>
+      <div className={styles.newComment}>
+        <NewCommentForm onAddComment={handleAddComment} />
+      </div>
       {loading ? (
         <p>Загрузка...</p>
       ) : (

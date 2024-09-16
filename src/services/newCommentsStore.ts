@@ -1,4 +1,3 @@
-// commentService.ts
 import { Comment } from "../interfaces/comment";
 
 export const saveCommentsToLocalStorage = (comments: Comment[]) => {

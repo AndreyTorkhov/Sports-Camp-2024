@@ -1,23 +1,97 @@
-@import "../../styles/variables";
-
 .newCommentForm {
+  width: 100%;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 8px 0;
+  position: relative;
+  transition: background-color 0.3s ease, height 0.3s ease;
+
+  &:hover {
+    background-color: #505050;
+  }
+
+  &.expanded {
+    background-color: #fff;
+  }
+}
+
+.tolltip {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  color: #006496;
+  font-weight: 100;
+
+  span {
+    color: #7f7f7f;
+  }
+}
+
+.inputWrapper {
   display: flex;
-  flex-direction: column;
-  gap: $margin-small;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #fff;
+  padding-right: 16px;
+  transition: height 0.3s ease;
 }
 
 .newCommentInput {
-  width: 100%;
-  padding: $padding-small;
-  border: 1px solid $color-secondary;
-  border-radius: $border-radius-small;
-  font-size: $font-size-small;
-  box-shadow: $box-shadow;
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  background-color: #fff;
+  border-radius: 8px 0 0 8px;
+  transition: height 0.3s ease;
+
+  &:focus {
+    height: 64px;
+    outline: none;
+  }
 }
 
-@media (max-width: 600px) {
-  .newCommentInput {
-    font-size: $font-size-small;
-    padding: $padding-small;
+.iconsContainer {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 0 8px 8px 0;
+  background-color: #fff;
+  margin-top: auto; // Прижать иконки к низу
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.sendButtonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  padding: 0 16px; // Отступы внутри контейнера
+  width: calc(100% - 32px); // Учитываем отступы слева и справа (16px + 16px)
+}
+
+.sendButton {
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #fff;
+  cursor: not-allowed;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.active {
+    background-color: #00a876;
+    cursor: pointer;
   }
 }

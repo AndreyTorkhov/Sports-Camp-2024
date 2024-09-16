@@ -1,0 +1,16 @@
+.ratingButtons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ratingButton {
+  cursor: pointer;
+  background: #f4f4f4;
+  border: none;
+  padding: 10px 15px 10px 15px;
+  border-radius: 4px;
+  &:hover {
+    background-color: #d9f2e0;
+  }
+}
