@@ -1,0 +1,23 @@
+@import "../../styles/variables";
+
+.newCommentForm {
+  display: flex;
+  flex-direction: column;
+  gap: $margin-small;
+}
+
+.newCommentInput {
+  width: 100%;
+  padding: $padding-small;
+  border: 1px solid $color-secondary;
+  border-radius: $border-radius-small;
+  font-size: $font-size-small;
+  box-shadow: $box-shadow;
+}
+
+@media (max-width: 600px) {
+  .newCommentInput {
+    font-size: $font-size-small;
+    padding: $padding-small;
+  }
+}

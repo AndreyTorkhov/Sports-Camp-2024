@@ -1,0 +1,12 @@
+@import "../../styles/variables.scss";
+
+.commentList {
+  display: flex;
+  flex-direction: column;
+  padding: $padding-small;
+
+  @media (min-width: 768px) {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}

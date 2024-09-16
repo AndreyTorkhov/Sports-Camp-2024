@@ -1,0 +1,81 @@
+@import "../../styles/variables.scss";
+
+.commentCard {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.commentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.userPicture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.userName {
+  font-weight: bold;
+}
+
+.commentDate {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.moreButton {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.replyTo {
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.commentBody {
+  margin-bottom: 8px;
+}
+
+.commentText {
+  font-size: 1rem;
+}
+
+.commentFooter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.ratingButtons {
+  display: flex;
+  align-items: center;
+}
+
+.ratingButton {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.ratingResult {
+  margin: 0 8px;
+  font-weight: bold;
+}
