@@ -5,18 +5,33 @@ import styles from "./CommentList.module.scss";
 
 interface CommentListProps {
   comments: Comment[];
+  onAddComment: (newComment: Comment) => void; // Новый пропс для добавления комментария
 }
 
-const CommentList: React.FC<CommentListProps> = ({ comments }) => {
-  // Хранилище рефов для комментариев
+const CommentList: React.FC<CommentListProps> = ({
+  comments,
+  onAddComment,
+}) => {
   const commentRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
-  // Функция для прокрутки к комментарию
   const scrollToComment = (commentId: string) => {
-    const element = commentRefs.current[commentId];
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    const commentElement = commentRefs.current[commentId];
+    if (commentElement) {
+      commentElement.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleReply = (parentComment: Comment, text: string) => {
+    const newComment: Comment = {
+      id: new Date().getTime().toString(), // Генерируем уникальный ID
+      text,
+      parentComment, // Передаем весь объект родительского комментария
+      author: { nick: "Current User" }, // Заглушка для пользователя
+      rating: { plus: 0, minus: 0 },
+      published: { bunin: new Date().toLocaleDateString() }, // Текущая дата
+    };
+
+    onAddComment(newComment); // Добавляем новый комментарий
   };
 
   return (
@@ -27,6 +42,7 @@ const CommentList: React.FC<CommentListProps> = ({ comments }) => {
           comment={comment}
           commentRef={(el) => (commentRefs.current[comment.id] = el)}
           scrollToComment={scrollToComment}
+          onReply={handleReply}
         />
       ))}
     </div>

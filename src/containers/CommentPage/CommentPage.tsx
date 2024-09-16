@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../store/store";
 import NewCommentForm from "../../components/NewCommentForm";
-import CommentList from "../../components/CommentList";
+import CommentList from "../../components/CommentList"; // Обновили импорт
 import {
   getCommentsFromLocalStorage,
   saveCommentsToLocalStorage,
@@ -63,7 +63,10 @@ const CommentPage: React.FC = () => {
       {loading ? (
         <p>Загрузка...</p>
       ) : (
-        <CommentList comments={[...localComments, ...apiComments]} />
+        <CommentList
+          comments={[...localComments, ...apiComments]}
+          onAddComment={handleAddComment}
+        />
       )}
     </div>
   );
